@@ -1,0 +1,87 @@
+﻿.reveal {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--color-cream) 0%, var(--color-blush) 100%);
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 40%, rgba(217, 108, 145, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  padding-block: 4rem;
+}
+
+.card {
+  background: rgba(255, 248, 240, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(217, 108, 145, 0.25);
+  border-radius: var(--radius-xl);
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(2rem, 6vw, 4rem);
+  text-align: center;
+  max-width: 560px;
+  width: 100%;
+  box-shadow: var(--shadow-card), 0 0 60px rgba(217, 108, 145, 0.1);
+  position: relative;
+}
+
+.emoji {
+  display: block;
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.sparkleIcon {
+  color: var(--color-gold);
+  width: 28px;
+  height: 28px;
+  margin-bottom: 1rem;
+}
+
+.message {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  color: var(--color-burgundy);
+  margin-bottom: 1rem;
+  max-width: none;
+}
+
+.subMessage {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 42ch;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+
+.scrollCue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-rose);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.scrollArrow {
+  font-size: 1.2rem;
+  animation: bounceDown 1.5s ease-in-out infinite;
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}

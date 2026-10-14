@@ -1,0 +1,199 @@
+﻿.hero {
+  position: relative;
+  min-height: 100svh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--color-burgundy);
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgGradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 60% 30%, #7a2347 0%, var(--color-burgundy) 60%, #1a0811 100%);
+}
+
+.bgOrb1 {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  max-width: 600px;
+  max-height: 600px;
+  background: radial-gradient(circle, rgba(217, 108, 145, 0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 6s ease-in-out infinite;
+}
+
+.bgOrb2 {
+  position: absolute;
+  bottom: -10%;
+  left: -10%;
+  width: 40vw;
+  height: 40vw;
+  max-width: 400px;
+  max-height: 400px;
+  background: radial-gradient(circle, rgba(214, 183, 121, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 8s ease-in-out infinite reverse;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.08) translate(2%, 2%); }
+}
+
+.floatingContainer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.floatingEl {
+  position: absolute;
+  bottom: -10%;
+  color: rgba(248, 231, 236, 0.3);
+  user-select: none;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 5vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 700px;
+  padding-bottom: calc(clamp(2rem, 6vw, 4rem) + var(--safe-bottom));
+}
+
+.scriptAccent {
+  font-family: var(--font-script);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--color-gold);
+  margin: 0;
+  max-width: none;
+  line-height: 1;
+}
+
+.name {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.1;
+  text-shadow: 0 4px 32px rgba(217, 108, 145, 0.4);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  color: rgba(248, 231, 236, 0.85);
+  max-width: 50ch;
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.heroImageWrapper {
+  position: relative;
+  width: clamp(160px, 35vw, 260px);
+  height: clamp(160px, 35vw, 260px);
+  margin-block: 0.5rem;
+}
+
+.heroImageInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(214, 183, 121, 0.6);
+  position: relative;
+  z-index: 1;
+}
+
+.heroImagePlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: rgba(255, 248, 240, 0.08);
+  color: rgba(248, 231, 236, 0.7);
+}
+
+.placeholderIcon {
+  color: var(--color-rose);
+  opacity: 0.7;
+  width: 40px;
+  height: 40px;
+}
+
+.placeholderText {
+  font-size: 0.7rem;
+  text-align: center;
+  line-height: 1.4;
+  max-width: 120px;
+  opacity: 0.6;
+}
+
+.imageGlow {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 0 40px rgba(217, 108, 145, 0.4);
+  z-index: 0;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 40px rgba(217, 108, 145, 0.4); }
+  50% { box-shadow: 0 0 60px rgba(217, 108, 145, 0.6); }
+}
+
+.ctaBtn {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  padding: 1rem 2.25rem;
+  background: linear-gradient(135deg, var(--color-gold-dark), var(--color-gold));
+  color: var(--color-burgundy) !important;
+  box-shadow: 0 8px 32px rgba(214, 183, 121, 0.3);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.ctaBtn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 48px rgba(214, 183, 121, 0.45);
+}
+
+.scrollHint {
+  color: rgba(248, 231, 236, 0.5);
+  margin-top: -0.5rem;
+}
+
+@media (max-width: 480px) {
+  .content { gap: 1.25rem; }
+  .heroImageWrapper {
+    width: 140px;
+    height: 140px;
+  }
+}

@@ -1,0 +1,88 @@
+﻿.section {
+  position: relative;
+  background: linear-gradient(160deg, var(--color-cream) 0%, var(--color-blush) 50%, var(--color-cream) 100%);
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(217, 108, 145, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  padding-block: 4rem;
+}
+
+.card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(255, 248, 240, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(217, 108, 145, 0.2);
+  border-radius: var(--radius-xl);
+  padding: clamp(2.5rem, 6vw, 5rem) clamp(2rem, 6vw, 4rem);
+  max-width: 560px;
+  width: 100%;
+  box-shadow: var(--shadow-card), 0 0 80px rgba(217, 108, 145, 0.1);
+}
+
+.cakeSvg {
+  width: clamp(140px, 40vw, 200px);
+  height: auto;
+}
+
+.wish {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: var(--color-burgundy);
+  margin: 0;
+}
+
+.message {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  font-style: italic;
+  max-width: 44ch;
+  text-align: center;
+  margin: 0;
+}
+
+.hearts {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-rose);
+}
+
+.heartLg { width: 24px; height: 24px; fill: var(--color-rose); }
+.heartSm { width: 16px; height: 16px; fill: var(--color-rose); }
+
+.senderLine {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  max-width: none;
+}
+
+.senderName {
+  font-family: var(--font-script);
+  font-size: 1.4rem;
+  color: var(--color-burgundy);
+}
+
+.restartBtn {
+  font-size: 0.85rem;
+  padding: 0.6rem 1.25rem;
+  min-height: 40px;
+}

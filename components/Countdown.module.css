@@ -1,0 +1,89 @@
+﻿.section {
+  background: linear-gradient(180deg, var(--color-blush) 0%, var(--color-cream) 100%);
+  text-align: center;
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+  flex-wrap: wrap;
+}
+
+.unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.number {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  font-weight: 700;
+  color: var(--color-burgundy);
+  background: rgba(255, 248, 240, 0.8);
+  border: 1px solid rgba(217, 108, 145, 0.25);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  min-width: clamp(80px, 15vw, 130px);
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  line-height: 1;
+}
+
+.label {
+  font-size: clamp(0.65rem, 1.5vw, 0.8rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.colon {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 700;
+  color: var(--color-rose);
+  line-height: 1;
+  margin-bottom: 1.8rem;
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.birthdayMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 248, 240, 0.8);
+  border: 1px solid rgba(217, 108, 145, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2rem;
+  max-width: 480px;
+  margin-inline: auto;
+  box-shadow: var(--shadow-card);
+}
+
+.birthdayEmoji {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.birthdayMessage p {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  text-align: center;
+  margin-inline: auto;
+}
+
+@media (max-width: 480px) {
+  .colon { display: none; }
+  .countdown { gap: 0.75rem; }
+}
